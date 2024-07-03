@@ -3,7 +3,7 @@ let accountEmail = "abc@example.com"
 var accountPassword = "123abc"
 accountCity = "Pune"    //JS allows you to take use varibale like this without declaring const, let or var but this is not ideal/preferable.
 let accountState    //this will give "undefined" value
-
+// const accountHolder     // ❌ When you declare a const variable, you must assign a value to it immediately.
 
 // accountId = 54321       // Not allowed
 accountEmail = "def@example.com"
