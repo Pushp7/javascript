@@ -80,7 +80,7 @@ console.log(regularUser.username?.fullname.lastname);
 
 
 
-//Merging to or more object 
+//Merging two or more object 
 
 const obj1 = {1: 'a', 2: 'b'}
 const obj2 = {3: 'y', 4: 'z'}
