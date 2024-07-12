@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <div class="week">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const week = document.querySelector(".week");
+    console.log(week);              //  <div class="week">...</div>
+    console.log(week.children);     // returns HTMLCollection of all the children elements
+    console.log(week.children[0]);  // <div class="day">Monday</div>
+    console.log(week.children[2].innerHTML); // Wednesday
+
+    for (let i = 0; i < week.children.length; i++) {
+        console.log(week.children[i]);      // This will log each child element within week(parent) one by one.
+        console.log(week.children[i].innerHTML);    //This will log innerHTML of each child element
+    }
+
+    week.children[1].style.color = "red"
+    week.children[0].style.backgroundColor = "green"
+
+    console.log(week.firstElementChild)     // div class="day">Monday</div>
+    console.log(week.lastElementChild)      // div class="day">Thursday</div>
+
+    const dayOne = document.querySelector(".day")
+    console.log(dayOne) // <div class="day">Monday</div>
+    console.log(dayOne.parentElement) // <div class="week">...</div>
+    console.log(dayOne.nextElementSibling) // // <div class="day">Tuesday</div>
+    
+    console.log(week.childNodes) // returns NodeList of all the child elements of week (including "text" and "comment")
+    
+
+
+</script>
+</html>
