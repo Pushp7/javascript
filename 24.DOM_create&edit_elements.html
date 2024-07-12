@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="languages">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+
+    // create and add element to the DOM
+        function addLanguage(lang){
+            const li = document.createElement("li")
+            li.textContent = lang   // to add text content we have to traverse through whole DOM tree of li
+            document.querySelector(".languages").appendChild(li)
+        }
+        addLanguage("Python")
+        addLanguage("C++")
+
+        function addLanguageOptimised(lang){
+            const li = document.createElement("li")
+            li.appendChild(document.createTextNode(lang))   //optimised way than above function to add text content in li element.
+            document.querySelector(".languages").appendChild(li)
+        }
+        addLanguageOptimised("typescript")
+        addLanguageOptimised("Java")
+
+    // Edit
+        //1. either we can change in the same selected element
+        document.querySelector("li:nth-child(2)").innerHTML = "Ruby"
+
+        //2. or we can replace the selected element
+        const newli = document.createElement("li")
+        newli.textContent = "Mojo"
+        document.querySelector("li:nth-child(5)").replaceWith(newli)
+
+        //3. It can be using outerHTML also
+        document.querySelector("li:first-child").outerHTML = "<li>Golang</li>"
+
+    // Remove or Delete
+        document.querySelector("li:last-child").remove()
+</script>
+</html>
