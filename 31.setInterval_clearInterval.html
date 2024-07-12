@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SetInterval, ClearInterval (open console)</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    let greeting = "Hello,"
+    
+    let ref = null;
+    document.querySelector("#start").addEventListener("click", function(){
+        ref = setInterval(function(a){
+            console.log(a,"Pushp");
+        }, 1000, greeting)  //setInterval also takes 3rd argument(any variable you want)
+    })
+
+    document.getElementById("stop").addEventListener("click", function(){
+        clearInterval(ref) // clearInterval takes setInterval reference to clear setInterval
+        ref = null
+        console.log("setInterval Stopped!");
+        
+    })
+
+
+</script>
+</html>
