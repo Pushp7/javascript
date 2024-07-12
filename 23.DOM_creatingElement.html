@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121;">
+    
+</body>
+<script>
+    // Create any element
+        const createdDiv = document.createElement("div")
+
+    //we can set attributes by directly using attribute names like this⤵️
+        createdDiv.className = "main"   // sets the class
+        createdDiv.id = "main-id"   // sets the id
+    
+    //or we can also set attributes by using setAttribute() method, for e.g.
+        createdDiv.setAttribute("data-name", "pushp")   // sets any attribute
+
+    // We can set innerText by directly writing like this⤵️
+        createdDiv.innerText = "Dynamically generated Div 😍 "
+
+    // or we can also set innerText by using createTextNode() method, for e.g.
+        const addText = document.createTextNode("Dynamically generated Div 🤡 ")
+        createdDiv.appendChild(addText)
+
+    // we can add style to the selected element like this⤵️
+        createdDiv.style.width = "500px"
+        createdDiv.style.height = "300px"
+        createdDiv.style.padding = "10px"
+        createdDiv.style.backgroundColor = "orange"
+
+    // and finally append the created element wherever you want to add.
+        document.body.appendChild(createdDiv)
+
+</script>
+</html>
