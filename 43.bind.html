@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+</body>
+<script>
+    /* bind is a method available on function objects. It allows you to set the context (this) for a function 
+        and is particularly useful when dealing with event handlers or callback functions where the this context may be lost. */
+
+    class React{
+        constructor(){
+            this.library = "react";
+            this.server = "http://localhost/3000"
+            // Set up the event listener for the button click
+            document.querySelector("button").addEventListener("click", this.handleClick.bind(this))
+            /* The use of 'bind' here ensures that handleClick always has the correct 'this' context, i.e., the instance of the React class.
+                Without 'bind', the 'this' context would be lost in the callback, leading to incorrect behavior or errors.*/
+        }
+        handleClick(){
+            console.log("Button clicked");
+            console.log(this);  // Log the context (should be the React instance)
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
